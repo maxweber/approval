@@ -42,6 +42,13 @@
            (fn [data request]
              (res/response (response-body data))))
 
+(def app2
+     (-> stub-handler
+         (wrap-approval (fn [token] nil) prefix query-param)
+         wrap-params))
+
 (describe "Approval middleware"
   (it "should get the approval for the token in the query parameters and use the approved function to compute the response for the request"
-    (= (response-body data) (:body (app ring-request)))))
+    (= (response-body data) (:body (app ring-request))))
+  (it "should return a 404 if the token is not found"
+    (= 404 (:status (app2 ring-request)))))

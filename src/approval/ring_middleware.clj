@@ -6,7 +6,8 @@
   (fn [req]
     (if (= prefix (:uri req))
       (if-let [token (get-in req [:query-params query-param])]
-        (let [[f data] (approve get-approval token)]
-          (f data req))
+        (if-let [[f data] (approve get-approval token)]
+          (f data req)
+          (status (response "") 404))
         (status (response "") 400))
       (handler req))))
