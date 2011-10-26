@@ -1,5 +1,5 @@
-(defproject approval "0.1.0-SNAPSHOT"
-  :description "A module to grant access to a functionality via a token. Possible use cases: registration confirmation via email, password reset etc."
+(defproject approval "0.1.0"
+  :description "A module to approve external access to a function."
   :dependencies [[org.clojure/clojure "1.2.1"]
                  [ring/ring-core "0.3.11"]]
   :dev-dependencies [[com.stuartsierra/lazytest "1.1.2"]

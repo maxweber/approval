@@ -1,6 +1,8 @@
 # approval
 
-A module to grant access to a functionality via a token. Possible use cases: email registration confirmation, password reset etc.
+A module to approve external access to a function. A ring
+middleware is provided, which can be used for an external access via
+HTTP. Possible use are cases: email confirmation, password reset etc.
 
 ## License
 
