@@ -1,4 +1,4 @@
-(defproject approval "0.1.0"
+(defproject approval "0.1.1"
   :description "A module to approve external access to a function."
   :dependencies [[org.clojure/clojure "1.2.1"]
                  [ring/ring-core "0.3.11"]]
